@@ -1,0 +1,36 @@
+; Sat Jun 29 17:42:50 VET 2013
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([HayatD%C3%B6ng%C3%BCs%C3%BC_Class12] of  Inek
+
+	(hayvanidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class15])
+	(isim "Sarikiz"))
+
+([HayatD%C3%B6ng%C3%BCs%C3%BC_Class13] of  Insan
+
+	(arkadasidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class14])
+	(isim "Ahmet")
+	(sahibidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class17]))
+
+([HayatD%C3%B6ng%C3%BCs%C3%BC_Class14] of  Insan
+
+	(arkadasidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class13])
+	(isim "Deniz")
+	(sahibidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class16]))
+
+([HayatD%C3%B6ng%C3%BCs%C3%BC_Class15] of  Insan
+
+	(isim "Veli")
+	(sahibidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class12]))
+
+([HayatD%C3%B6ng%C3%BCs%C3%BC_Class16] of  Kedi
+
+	(hayvanidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class14])
+	(isim "Mavis"))
+
+([HayatD%C3%B6ng%C3%BCs%C3%BC_Class17] of  Kedi
+
+	(hayvanidir [HayatD%C3%B6ng%C3%BCs%C3%BC_Class13])
+	(isim "Pamuk"))

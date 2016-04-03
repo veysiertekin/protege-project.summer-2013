@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/Ontology1372543966.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.owl-ontologies.com/Ontology1372543966.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Vejeteryan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vejeteryan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Kedi">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Hayvan"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Kedi</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Inek">
+    <rdfs:subClassOf rdf:resource="#Vejeteryan"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Hayvan"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inek</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="#Hayvan">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hayvan</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:ID="Insan">
+    <rdfs:subClassOf rdf:resource="#Hayvan"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insan</rdfs:label>
+  </owl:Class>
+  <owl:Class>
+    <owl:unionOf rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+      <owl:Class rdf:about="#Kedi"/>
+    </owl:unionOf>
+  </owl:Class>
+  <owl:FunctionalProperty rdf:ID="hayvanidir">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Kedi"/>
+          <owl:Class rdf:about="#Inek"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >hayvanidir</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Insan"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isim">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Hayvan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >isim</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="sahibidir">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Insan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >sahibidir</rdfs:label>
+    <rdfs:range rdf:resource="#Kedi"/>
+    <rdfs:range rdf:resource="#Inek"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="arkadasidir">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >arkadasidir</rdfs:label>
+    <rdfs:range rdf:resource="#Insan"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+          <owl:Class rdf:about="#Insan"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <Insan rdf:about="HayatDöngüsü_Class13">
+    <isim rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ahmet</isim>
+    <sahibidir>
+      <Kedi rdf:about="HayatDöngüsü_Class17">
+        <isim rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Pamuk</isim>
+        <hayvanidir rdf:resource="HayatDöngüsü_Class13"/>
+      </Kedi>
+    </sahibidir>
+    <arkadasidir>
+      <Insan rdf:about="HayatDöngüsü_Class14">
+        <sahibidir>
+          <Kedi rdf:about="HayatDöngüsü_Class16">
+            <isim rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Mavis</isim>
+            <hayvanidir rdf:resource="HayatDöngüsü_Class14"/>
+          </Kedi>
+        </sahibidir>
+        <arkadasidir rdf:resource="HayatDöngüsü_Class13"/>
+        <isim rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Deniz</isim>
+      </Insan>
+    </arkadasidir>
+  </Insan>
+  <Inek rdf:about="HayatDöngüsü_Class12">
+    <isim rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sarikiz</isim>
+    <hayvanidir>
+      <Insan rdf:about="HayatDöngüsü_Class15">
+        <isim rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Veli</isim>
+        <sahibidir rdf:resource="HayatDöngüsü_Class12"/>
+      </Insan>
+    </hayvanidir>
+  </Inek>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

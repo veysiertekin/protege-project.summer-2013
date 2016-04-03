@@ -1,0 +1,72 @@
+; Sat Jun 29 17:42:50 VET 2013
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot sahibidir
+		(type INSTANCE)
+;+		(allowed-classes Kedi Inek)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot isim
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot arkadasidir
+		(type INSTANCE)
+;+		(allowed-classes Insan)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot hayvanidir
+		(type INSTANCE)
+;+		(allowed-classes Insan)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Vejeteryan
+	(is-a USER)
+	(role abstract))
+
+(defclass Hayvan
+	(is-a USER)
+	(role abstract)
+	(single-slot isim
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Kedi
+	(is-a Hayvan)
+	(role concrete)
+	(single-slot hayvanidir
+		(type INSTANCE)
+;+		(allowed-classes Insan)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Insan
+	(is-a Hayvan)
+	(role concrete)
+	(single-slot sahibidir
+		(type INSTANCE)
+;+		(allowed-classes Kedi Inek)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot arkadasidir
+		(type INSTANCE)
+;+		(allowed-classes Insan)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Inek
+	(is-a Hayvan Vejeteryan)
+	(role concrete)
+	(single-slot hayvanidir
+		(type INSTANCE)
+;+		(allowed-classes Insan)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
